@@ -21,7 +21,9 @@ export function useDarkMode(key, initialValue) {
     // Inside it, check to see if the value from `useLocalStorage` is true or false.
     if (storedValue) {
       //If it's true, add the class `dark-mode` to the `body` element.
-      return setStoredValue(classes.toggle('dark-mode'));
+      return setStoredValue(classes.toggle('dark-mode', true));
+    } else{
+      return setStoredValue(classes.toggle('dark-mode', false))
     }
   }, [storedValue]);
   console.log('storedValue: ', storedValue)
